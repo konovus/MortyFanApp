@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.konovus.simplemortyr.ui.mainScreen.MainFragment"
+        android:label="Rick and Morty"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_hilt_FavoritesFragment"
+            app:destination="@id/hilt_FavoritesFragment"
+            />
+        <action
+            android:id="@+id/action_mainFragment_to_hilt_PagerFragment"
+            app:destination="@id/hilt_PagerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.konovus.simplemortyr.ui.detailsScreen.DetailsFragment"
+        android:label="Character's Details"
+        tools:layout="@layout/details_fragment" >
+
+        <argument
+            android:name="character"
+            app:argType="com.konovus.simplemortyr.entity.Character" />
+        <action
+            android:id="@+id/action_detailsFragment_to_hilt_BottomSheetFragment"
+            app:destination="@id/hilt_BottomSheetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hilt_FavoritesFragment"
+        android:name="com.konovus.simplemortyr.ui.favoritesScreen.FavoritesFragment"
+        android:label="Favorites"
+        tools:layout="@layout/favorites_fragment">
+        <action
+            android:id="@+id/action_hilt_FavoritesFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/hilt_PagerFragment"
+        android:name="com.konovus.simplemortyr.ui.pagerScreen.PagerFragment"
+        android:label="Character's Details" >
+        <action
+            android:id="@+id/action_hilt_PagerFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_hilt_PagerFragment_to_hilt_BottomSheetFragment"
+            app:destination="@id/hilt_BottomSheetFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/hilt_BottomSheetFragment"
+        android:name="com.konovus.simplemortyr.ui.bottomSheetScreen.BottomSheetFragment"
+        android:label=""
+        tools:layout="@layout/bottom_sheet_episode">
+        <argument
+            android:name="episode"
+            app:argType="com.konovus.simplemortyr.entity.Episode" />
+    </dialog>
+</navigation>

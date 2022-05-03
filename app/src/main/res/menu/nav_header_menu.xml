@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/all_characters"
+            android:title="All Characters"/>
+
+        <item android:title="Status">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item android:id="@+id/alive"
+                        android:title="Alive"/>
+                    <item android:id="@+id/dead"
+                        android:title="Dead"/>
+                    <item android:id="@+id/unknown"
+                        android:title="Unknown"/>
+                </group>
+            </menu>
+        </item>
+        <item android:title="Species">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item android:id="@+id/human"
+                        android:title="Human"/>
+                    <item android:id="@+id/alien"
+                        android:title="Alien"/>
+                    <item android:id="@+id/humanoid"
+                        android:title="Humanoid"/>
+                    <item android:id="@+id/mythological"
+                        android:title="Mythological Creature"/>
+                    <item android:id="@+id/disease"
+                        android:title="Disease"/>
+                </group>
+            </menu>
+        </item>
+        <item android:title="Gender">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item android:id="@+id/male"
+                        android:title="Male"/>
+                    <item android:id="@+id/female"
+                        android:title="Female"/>
+                    <item android:id="@+id/genderless"
+                        android:title="Genderless"/>
+                    <item android:id="@+id/unknown_g"
+                        android:title="Unknown"/>
+                </group>
+            </menu>
+        </item>
+
+    </group>
+</menu>
